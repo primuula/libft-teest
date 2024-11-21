@@ -6,13 +6,13 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:15:43 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/12 15:21:01 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/21 16:19:30 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (c >= 65 && c <= 90)
 		return (c + 32);
 	return (c);
 }

@@ -6,11 +6,11 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:03:47 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 12:59:58 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/21 16:50:13 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
+
 int	ft_atoi(const char *nptr)
 {
 	int	i;
@@ -20,11 +20,12 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	signe = 1;
 	i = 0;
-	while (nptr[i] >= 9 && nptr[i] <= 13 || nptr[i] == ' ')
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == ' '))
 		i++;
-	if (nptr[i] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		signe = signe * -1;
+		if (nptr[i] == '-')
+			signe = signe * -1;
 		i ++;
 	}
 	
@@ -35,7 +36,7 @@ int	ft_atoi(const char *nptr)
 	}
 	return (signe * result);
 }
-
+/*
 #include<stdlib.h>
 #include<unistd.h>
 void	ft_putchar(char c)

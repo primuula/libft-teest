@@ -6,13 +6,15 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:31:28 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/12 12:36:13 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/21 16:33:55 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	return (c >= 32 && c <= 127);
+	if (!(c >= 32 && c <= 127))
+		return (0);
+	return (1);
 }
 /*
 #include<unistd.h>

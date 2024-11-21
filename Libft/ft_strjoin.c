@@ -6,7 +6,7 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:17:07 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 12:22:54 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/21 16:16:39 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_putstr(char *str)
 	i++;
 	}
 }
+/*
 int main()
 {	
 	char *prem = "doki";
@@ -81,4 +82,4 @@ int main()
 	ft_putstr(ft_strjoin(prem, deux));
 
 return 0;
-}
+}*/

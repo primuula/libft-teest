@@ -6,7 +6,7 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:41:28 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 14:52:27 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/21 16:26:11 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		if (s1[c] != s2[c])
 			return (s1[c] - s2[c]);
-	c++;
+		c++;
 	}
 	return (s1[c] - s2[c]);
 }

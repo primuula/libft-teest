@@ -6,13 +6,16 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:55:14 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/12 12:01:07 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/21 16:24:12 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
-{
-	return (c >= 0 && c <= 9);
+{	
+	
+	if (!(c >= 0 && c <= 9))
+		return (0);
+	return (1);
 }
 /*
 #include<unistd.h>

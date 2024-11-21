@@ -6,7 +6,7 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 08:30:05 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/19 09:01:42 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:08:09 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	ft_putchar(char c)
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (n == -2147483647)
+	{
+		write(fd, "-2147483647", 11);
+	}
 	if (n < 0)
 	{
 	ft_putchar('-');
