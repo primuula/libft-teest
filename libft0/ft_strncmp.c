@@ -6,7 +6,7 @@
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:41:28 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 16:26:11 by safamran         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:13:56 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int c;
+	unsigned int	c;
 
 	c = 0;
 	if (n <= 0)
 		return (0);
-	while (s1[c] != '\0' && c < n -1)
+	while (s1[c] != '\0' && s2[c] != '\0' && c < n)
 	{
 		if (s1[c] != s2[c])
-			return (s1[c] - s2[c]);
+			return ((unsigned char)s1[c] - (unsigned char)s2[c]);
 		c++;
 	}
-	return (s1[c] - s2[c]);
+	if (c < n)
+		return ((unsigned char)s1[c] - (unsigned char)s2[c]);
+	return (0);
 }
 /*
 #include <unistd.h>
@@ -33,8 +35,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int main()
 {
 	int s = 5;
-	char prem[] = "Bonjour";
-	char deux[] = "Bonjour";
+	char prem[] = "abcdef";
+	char deux[] = "abc\375xx";
 	if (ft_strncmp(prem, deux, s) == 0)
 		write(1, "0" ,1);
 	if (ft_strncmp(prem, deux, s) > 0)

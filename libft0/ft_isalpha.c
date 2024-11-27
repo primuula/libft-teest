@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 09:03:47 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 16:50:13 by safamran         ###   ########.fr       */
+/*   Created: 2024/11/12 10:13:39 by safamran          #+#    #+#             */
+/*   Updated: 2024/11/22 16:31:52 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int	ft_atoi(const char *nptr)
+int	ft_isascii(int c)
 {
-	int	i;
-	int	signe;
-	int	result;
-	
-	result = 0;
-	signe = 1;
-	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == ' '))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			signe = signe * -1;
-		i ++;
-	}
-	
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-	result = result * 10 + (nptr[i] - '0');
-	i++;
-	}
-	return (signe * result);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
 }
 /*
-#include<stdlib.h>
 #include<unistd.h>
 void	ft_putchar(char c)
 {
@@ -48,20 +27,17 @@ void	ft_putnbr(int nb)
 {
 	if (nb < 0)
 	{
-	nb = nb *-1;
-	ft_putchar('-');
+		ft_putchar('-');
+		nb = nb* -1;
 	}
 
 	if (nb > 9)
 		ft_putnbr(nb/10);
 	ft_putchar((nb%10) + '0');
-
 }
 int main()
 {
-	char *test = "   	-98665";
-	ft_putnbr(atoi(test));
-	ft_putchar('\n');
-	ft_putnbr(ft_atoi(test));
+	int a = 93;
+	ft_putnbr(ft_isascii(a));
 return 0;
 }*/

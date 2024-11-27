@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:26:07 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 17:04:21 by safamran         ###   ########.fr       */
+/*   Created: 2024/11/25 17:14:43 by safamran          #+#    #+#             */
+/*   Updated: 2024/11/25 17:32:00 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	unsigned char	*un;
+	unsigned char	*de;
+	unsigned int	inc;
 
-	i = 0;
-	while (str[i] != '\0')
+	un = (unsigned char *) s1;
+	de = (unsigned char *) s2;
+	inc = 0;
+	while (n > 0)
 	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return((char *)str + i);
-	i++;
+		if (un[inc] != de[inc])
+			return (un[inc] - de[inc]);
+	inc++;
+	n --;
 	}
-	if (c == '\0')
-		return((char *)str + i);
 	return (0);
 }
 /*
-#include<unistd.h>
-void	ft_puthcar(char c)
-{
-	write(1, &c, 1);
-}
 int main()
 {
-	char *test = "saluuut toi";
-	ft_strchr(test, 127);
-return 0;
+
+return (0);
 }*/

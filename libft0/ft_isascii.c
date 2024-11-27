@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 14:46:48 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 14:53:20 by safamran         ###   ########.fr       */
+/*   Created: 2024/11/22 10:53:04 by safamran          #+#    #+#             */
+/*   Updated: 2024/11/25 11:23:03 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i])
-	i++;
-	while (i >= 0)
-	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
-	i--;
-	}	
-	if (c == '\0')
-		return ((char *)&s[i]);
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
 	return (0);
 }
 /*
 int main()
 {
+	int i;
+    i = 0;
+    while (i <= 47)
+    {
+        printf("%d", ft_isascii(i));
+        i++;
+    }
 
-
-    return (0);
+return 0;
 }*/

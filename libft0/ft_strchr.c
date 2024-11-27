@@ -1,51 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 11:35:21 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 11:47:54 by safamran         ###   ########.fr       */
+/*   Created: 2024/11/19 11:26:07 by safamran          #+#    #+#             */
+/*   Updated: 2024/11/25 11:54:12 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *str, int c)
 {
-	const unsigned char	*s;
- 
-	unsigned char		*d;
+	int	i;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	while (n > 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
+		if ((unsigned char)str[i] == (unsigned char)c)
+			return ((char *) str + i);
+	i++;
 	}
-	return (dest);
+	if (c == '\0')
+		return ((char *) str + i);
+	return (0);
 }
 /*
-void	ft_putchar(char c)
+#include<unistd.h>
+void	ft_puthcar(char c)
 {
 	write(1, &c, 1);
 }
-
 int main()
 {
-	char desti[20];
-	char *source = "chloresk";
-	int m = 4;
-	ft_memcpy(desti, source, 4);
-	int a = 0;
-	while (a != m)
-	{
-		ft_putchar(desti[a]);
-	a ++;
-	}	
+	char *test = "saluuut toi";
+	ft_strchr(test, 127);
 return 0;
 }*/

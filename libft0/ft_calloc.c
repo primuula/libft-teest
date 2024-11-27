@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 08:30:05 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 17:08:09 by safamran         ###   ########.fr       */
+/*   Created: 2024/11/22 17:32:45 by safamran          #+#    #+#             */
+/*   Updated: 2024/11/25 11:26:04 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (n == -2147483647)
-	{
-		write(fd, "-2147483647", 11);
-	}
-	if (n < 0)
-	{
-	ft_putchar('-');
-	n = n*-1;
-	}
+	unsigned char	*new;
 
-	if (n > 9)
-		ft_putnbr_fd(n/10, fd);
-	ft_putchar((n%10) + '0');
+	new = malloc(size * nmemb);
+	if (!new)
+		return (NULL);
+	ft_memset(new, 0, (nmemb * size));
+	return (new);
 }
 /*
 int main()
 {
-	ft_putnbr_fd(46, 1);
-return 0;
+return (0);
 }*/

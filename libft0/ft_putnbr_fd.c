@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 10:13:39 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 13:03:59 by safamran         ###   ########.fr       */
+/*   Created: 2024/11/19 08:30:05 by safamran          #+#    #+#             */
+/*   Updated: 2024/11/25 11:48:46 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	ft_putchar_fdd(char c, int fd)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	write(fd, &c, 1);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+	}
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar_fdd('-', fd);
+		n = n * -1;
+		}
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fdd((n % 10) + '0', fd);
+	}
 }
 /*
-#include<unistd.h>
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb* -1;
-	}
-
-	if (nb > 9)
-		ft_putnbr(nb/10);
-	ft_putchar((nb%10) + '0');
-}
 int main()
 {
-	int a = 93;
-	ft_putnbr(ft_isascii(a));
+	ft_putnbr_fd(-1, 1);
 return 0;
 }*/

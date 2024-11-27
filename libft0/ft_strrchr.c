@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safamran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 11:55:14 by safamran          #+#    #+#             */
-/*   Updated: 2024/11/21 16:24:12 by safamran         ###   ########.fr       */
+/*   Created: 2024/11/19 14:46:48 by safamran          #+#    #+#             */
+/*   Updated: 2024/11/22 10:27:29 by safamran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
-{	
-	
-	if (!(c >= 0 && c <= 9))
-		return (0);
-	return (1);
+char	*ft_strrchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+	i--;
+	}	
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (0);
 }
 /*
-#include<unistd.h>
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 int main()
 {
-	int a = 9;
-	ft_putchar(ft_isdigit(a) + '0');
-return 0;
+	const char *test = "mArvose";
+	ft_strrchr(test, 65);
+
+    return (0);
 }*/
